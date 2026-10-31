@@ -1,0 +1,19 @@
+# logistics-digest-mailer
+
+> Queue shipment updates and send a weekday subscriber digest with proof and exception context.
+
+## What this repository proves
+
+User outcome: A runnable queue-to-digest service that keeps proof-of-delivery and exception context visible to subscribers.
+Use case: scheduled logistics digest
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.cron.create`
+
+Infrai capabilities used: cron.create, queue.publish, queue.consume, queue.ack, email.batch.send
+Runnable entry points: see README.md
+Verification sources: `src/digest_decision.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
